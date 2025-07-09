@@ -11,13 +11,6 @@ from telegram.ext import (
     CallbackContext
 )
 
-from flask import Flask
-app = Flask(__name__)
-
-@app.route('/')
-def home():
-    return "Bot is running"
-
 # Настройка логирования
 logging.basicConfig(
     format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
@@ -111,8 +104,7 @@ class TarotBot:
             await update.message.reply_text("⚠️ Произошла ошибка. Попробуйте снова.")
 
     def run(self):
-        from threading import Thread
-        Thread(target=app.run, kwargs={'host': '0.0.0.0', 'port': 10000}).start()
+       
         """Запускает бота"""
         application = Application.builder().token(self.token).build()
         
