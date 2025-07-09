@@ -111,7 +111,7 @@ class TarotBot:
         application.add_handler(CommandHandler("card", self.send_card))
         application.add_handler(MessageHandler(filters.Regex(r'^🔮 Вытянуть карту$'), self.send_card))
         
-        # application.run_polling()
+        application.run_polling()
 
 if __name__ == '__main__':
     TOKEN = os.environ.get('BOT_TOKEN')
