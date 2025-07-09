@@ -114,7 +114,7 @@ class TarotBot:
         application.run_polling()
 
 if __name__ == '__main__':
-    TOKEN = "8006477688:AAEe4Nlrb_i79VGQMgXrH7yJ4pTTa2fAIE0"
+    TOKEN = os.environ.get('BOT_TOKEN')
     CARDS_FOLDER = "cards"
     
     if not os.path.exists(CARDS_FOLDER):
